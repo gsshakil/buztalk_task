@@ -1,5 +1,6 @@
+import 'package:buztalk_task/widgets/custom_list_tile.dart';
+import 'package:buztalk_task/widgets/jumborton.dart';
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -10,144 +11,58 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        children: [
+        children: const [
           Jumborton(),
-          ListTile(
-            onTap: () {},
-            leading: CircleAvatar(
-              radius: 25,
-              child: FaIcon(FontAwesomeIcons.accessibleIcon),
+          CustomListTile(
+            title: 'Clocking',
+            subtitle: 'Keep track of your working hours',
+            icon: FaIcon(
+              FontAwesomeIcons.solidClock,
+              color: Colors.redAccent,
             ),
-            title: Text('Clocking'),
-            subtitle: Text('Keep track of your working hours'),
-            trailing: FaIcon(FontAwesomeIcons.angleRight),
           ),
-          MarginedDivider(),
-          ListTile(
-            leading: CircleAvatar(
-              radius: 25,
-              child: FaIcon(FontAwesomeIcons.accessibleIcon),
+          CustomListTile(
+            title: 'Shifts',
+            subtitle: 'Accept and rejects your shifts',
+            icon: FaIcon(
+              FontAwesomeIcons.idCard,
+              color: Colors.grey,
             ),
-            title: Text('Clocking'),
-            subtitle: Text('Keep track of your working hours'),
-            trailing: FaIcon(FontAwesomeIcons.angleRight),
           ),
-          MarginedDivider(),
-          ListTile(
-            leading: CircleAvatar(
-              radius: 25,
-              child: FaIcon(FontAwesomeIcons.accessibleIcon),
+          CustomListTile(
+            title: 'Contract Details',
+            subtitle: 'Review and download your contracts',
+            icon: FaIcon(
+              FontAwesomeIcons.sdCard,
+              color: Colors.blueGrey,
             ),
-            title: Text('Clocking'),
-            subtitle: Text('Keep track of your working hours'),
-            trailing: FaIcon(FontAwesomeIcons.angleRight),
           ),
-          MarginedDivider(),
-          ListTile(
-            leading: CircleAvatar(
-              radius: 25,
-              child: FaIcon(FontAwesomeIcons.accessibleIcon),
+          CustomListTile(
+            title: 'Payslips',
+            subtitle: 'Access all your past payslips',
+            icon: FaIcon(
+              FontAwesomeIcons.moneyBill,
+              color: Colors.greenAccent,
             ),
-            title: Text('Clocking'),
-            subtitle: Text('Keep track of your working hours'),
-            trailing: FaIcon(FontAwesomeIcons.angleRight),
           ),
-          MarginedDivider(),
-          ListTile(
-            leading: CircleAvatar(
-              radius: 25,
-              child: FaIcon(FontAwesomeIcons.accessibleIcon),
+          CustomListTile(
+            title: 'Other documents',
+            subtitle: 'Find your past job documents',
+            icon: FaIcon(
+              FontAwesomeIcons.file,
+              color: Colors.purple,
             ),
-            title: Text('Clocking'),
-            subtitle: Text('Keep track of your working hours'),
-            trailing: FaIcon(FontAwesomeIcons.angleRight),
           ),
-          MarginedDivider(),
-          ListTile(
-            leading: CircleAvatar(
-              radius: 25,
-              child: FaIcon(FontAwesomeIcons.accessibleIcon),
+          CustomListTile(
+            title: 'Report an issue',
+            subtitle: 'Let us know if you encounter any issue',
+            icon: FaIcon(
+              FontAwesomeIcons.bug,
+              color: Colors.amber,
             ),
-            title: Text('Clocking'),
-            subtitle: Text('Keep track of your working hours'),
-            trailing: FaIcon(FontAwesomeIcons.angleRight),
           ),
-          MarginedDivider(),
-          ListTile(
-            leading: CircleAvatar(
-              radius: 25,
-              child: FaIcon(FontAwesomeIcons.accessibleIcon),
-            ),
-            title: Text('Clocking'),
-            subtitle: Text('Keep track of your working hours'),
-            trailing: FaIcon(FontAwesomeIcons.angleRight),
-          ),
-          MarginedDivider(),
         ],
       ),
-    );
-  }
-}
-
-class MarginedDivider extends StatelessWidget {
-  const MarginedDivider({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20), child: Divider());
-  }
-}
-
-class Jumborton extends StatelessWidget {
-  const Jumborton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          width: MediaQuery.of(context).size.width,
-          height: 220,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black12,
-                spreadRadius: 3,
-                blurRadius: 3,
-                offset: Offset(0, 4),
-              )
-            ],
-            gradient: LinearGradient(
-              begin: const Alignment(-0.75, 0),
-              end: const Alignment(0.75, 0),
-              colors: [
-                Colors.blue.withOpacity(0.7),
-                Colors.blue.withOpacity(0.9),
-                Colors.blue.withOpacity(1),
-              ],
-            ),
-          ),
-        ),
-        Positioned(
-          right: 50,
-          top: -50,
-          child: Transform.rotate(
-            angle: -math.pi / 8,
-            child: Text(
-              'it',
-              style: TextStyle(
-                  color: Colors.white.withOpacity(0.07), fontSize: 250),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

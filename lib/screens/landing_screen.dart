@@ -34,7 +34,7 @@ class LandingScren extends ConsumerWidget {
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.black,
+          selectedItemColor: Colors.blue,
           unselectedItemColor: Colors.grey,
           selectedFontSize: 12,
           currentIndex: landingNotifier.selectedIndex,
